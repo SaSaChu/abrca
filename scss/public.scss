@@ -1,0 +1,874 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  @include font-smoothing(antialiased);
+}
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+
+.icon-arrow-long-left:before {
+  content: "\e900";
+}
+.icon-arrow-long-right:before {
+  content: "\e901";
+}
+.icon-chevron-down:before {
+  content: "\e902";
+}
+.icon-chevron-small-down:before {
+  content: "\e903";
+}
+.icon-chevron-small-right:before {
+  content: "\e904";
+}
+.icon-chevron-small-up:before {
+  content: "\e905";
+}
+.icon-chevron-thin-left:before {
+  content: "\e906";
+}
+.icon-chevron-thin-right:before {
+  content: "\e907";
+}
+.icon-chevron-up:before {
+  content: "\e908";
+}
+.icon-instagram:before {
+  content: "\e909";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+
+
+
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
+    background-color: rgba(245, 245, 245, 1.00);
+    color: rgba(0, 0, 0, 1.00);
+
+    @include font-smoothing(antialiased);
+
+  }
+}
+
+
+$allwidth: 1200px;
+
+header {
+  display: inline-block;
+  width: 100%;
+  background-color: white;
+
+  // 20/50/30
+
+  .top_boxs {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(12, 12, 12, 1.00);
+
+    @include range-width(0,420px) {
+      height: 20px;
+    }
+
+    .top_box {
+      display: inline-block;
+      max-width: $allwidth;
+      width: 100%;
+      line-height: 60px;
+      @include clearfix();
+      
+      @include range-width(420px, 1240px) {
+        padding: 0 10px;
+      }
+
+      .lag_boxs {
+        display: inline-block;
+        float: right;
+        color: white;
+        padding: 0 10px;
+        font-size: 18px; 
+
+        &:after {
+          display: inline-block;
+          content: '\e903';
+          font-family: 'icomoon';
+          color: white;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .logo_boxs {
+    display: inline-block;
+    max-width: $allwidth;
+    width: 100%;
+    height: 160px;
+    @include clearfix();
+    padding-top: 30px;
+    padding-left: 30px;
+
+
+    @include range-width(0,420px) {
+      height: 50px;
+      padding-top: 5px;
+      padding-left: 10px;
+    }
+
+    img {
+      display: inline-block;
+      max-width: 100%;
+      width: 670px;
+      float: left;
+
+      @include range-width(0,420px) {
+      width: 260px;
+      }
+    }
+  }
+
+  .nav_boxs {
+    display: inline-block;
+    max-width: $allwidth;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(238, 238, 238, 1.00);
+
+    @include range-width(0,420px) {
+      height: 30px;
+      background-color: rgba(7, 35, 92, 1.00);
+    }
+  }
+
+}
+
+
+
+#middle {
+  display: inline-block;
+  width: 100%;
+
+  .banner_boxs {
+    display: inline-block;
+    width: 100%;
+    height: 650px;
+    background-color: rgba(255, 208, 52, 1.00);
+
+    @include range-width(0,420px) {
+      height: 165px;
+    }
+  }
+
+  .middle_boxs {
+    display: inline-block;
+    max-width: $allwidth;
+    width: 100%;
+    padding: 55px 30px;
+    @include clearfix();
+
+    @include range-width(420px, 1240px) {
+      padding: 35px 10px;
+    }
+
+    @include range-width(0,420px) {
+      padding: 15px 10px;
+    }  
+
+
+    .mr_boxs {
+      display: inline-block;
+      width: 350px;
+      margin-left: 30px;
+      float: right;
+
+      @include range-width(0,420px) {
+        width: 100%;
+        margin-left: 0;
+        float: none;
+        padding-top: 15px;
+      }
+
+      .mr_box {
+        display: inline-block;
+        width: 100%;
+
+        .talk_boxs {
+          display: inline-block;
+          width: 100%;
+          height: 670px;
+          background-color: white;
+          position: relative;
+          margin-bottom: 35px;
+
+          &:before {
+            display: inline-block;
+            content: '';
+            width: 100%;
+            height: 230px;
+            background-color: rgba(201, 201, 201, 1.00);
+          }
+
+          .talk_box {
+            display: inline-block;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            .talk_pic_boxs {
+              display: inline-block;
+              width: 100%;
+              height: 310px;
+              padding: 50px;
+              
+              img {
+                display: inline-block;
+                width: 100%;
+                max-width:250px;
+                border: 5px solid white;
+              }
+            }
+
+            .talk_type_boxs {
+              display: inline-block;
+              width: 100%;
+              padding: 0 15px;
+
+              p {
+                display: inline-block;
+                width: 100%;
+                font-size: 25px;
+                color: black;
+                padding: 0 0 10px 0;
+                margin: 0;
+
+                &:nth-child(2) {
+                  color: rgba(138, 138, 138, 1.00);
+                  font-size: 18px;
+                  line-height: 24px;
+                }
+              }
+            }
+          }
+
+          .talk_arrow_boxs {
+            display: inline-block;
+            width: 100%;
+            height: 30px;
+            background-color: rgba(201, 201, 201, 1.00);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            @include clearfix();
+            
+            button {
+              display: inline-block;
+              cursor: pointer;
+              width: 30px;
+              height: 30px;
+              background-color: rgba(201, 201, 201, 1.00);
+              font-size: 13px;
+              color: white;
+              outline: 0;
+              border: 0;
+              @include transition(all .3s);
+
+              &:nth-child(1) {
+                border-right: 2px solid white;
+                float: left;
+              }
+
+              &:nth-child(2) {
+                border-left: 2px solid white;
+                float: right;
+              }
+
+              &:hover, &:active {
+                background-color: rgba(7, 35, 92, 1.00);
+              }
+            }
+          }
+        }
+
+        .other_boxs {
+          display: inline-block;
+          width: 100%;
+          height: 500px;
+          background-color: white;
+          margin-top: 55px;
+          @include clearfix();
+
+          @include range-width(0,420px) {
+            height: auto;
+            margin-top: 0;
+          }
+          
+          .other_tag {
+            display: inline-block;
+            cursor: pointer;
+            width: 50%;
+            padding: 25px 0;
+            background-color: white;
+            color: rgba(200, 200, 200, 1.00);
+            font-size: 25px;
+            @include transition(all .3s);
+            float: left;
+
+            &:hover, &:active, &.ot_ac {
+              background-color: rgba(200, 200, 200, 1.00);
+              color: white;
+            }
+
+            @include range-width(0,420px) {
+              font-size: 15px;
+              padding: 15px 0;
+            }
+          }
+
+          .other_list_boxs {
+            display: inline-block;
+            width: 100%;
+            padding: 40px 15px 15px 15px;
+
+            @include range-width(0,420px) {
+              padding: 20px 15px;
+            }
+
+            .other_list {
+              display: inline-block;
+              width: 100%;
+              padding-bottom: 20px;
+              margin-bottom: 20px;
+              border-bottom: 2px solid rgba(103, 101, 101, 1.00);
+              text-align: left;
+              @include clearfix();
+
+              @include range-width(0,420px) {
+                padding-bottom: 15px;
+              }
+              
+              img {
+                display: inline-block;
+                width: 100%;
+                max-width: 110px;
+                float: left;
+                margin-right: 10px;
+              }
+
+              a {
+                display: inline-block;
+                width: calc(100% - 110px - 10px);
+                float: left;
+                cursor: pointer;
+                color: black;
+                font-size: 15px;
+                text-decoration: none;
+                @include transition(all .3s);
+                
+                &:hover, &:active {
+                  color: rgba(9, 28, 72, 1.00);
+                }
+              }
+            }
+
+            button {
+              display: inline-block;
+              cursor: pointer;
+              width: 100%;
+              background-color: rgba(201, 201, 201, 1.00);
+              font-size: 15px;
+              color: white;
+              outline: 0;
+              border: 0;
+              padding: 15px 0;
+              @include transition(all .3s);
+              
+              &:hover, &:active {
+                background-color: rgba(9, 28, 72, 1.00);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ml_boxs {
+      display: inline-block;
+      width: calc(100% - 350px - 30px);
+      float: left;
+
+      @include range-width(0,420px) {
+        width: 100%;
+        margin-left: 0;
+        float: none;
+      }
+
+      .ml_box {
+        display: inline-block;
+        width: 100%;
+
+        .m_news_boxs, .m_study_boxs {
+          display: inline-block;
+          width: 100%;
+        }
+
+        .m_news_boxs {
+          background-color: white;
+          margin-bottom: 35px;
+          height: 200px;
+          @include clearfix();
+
+          .m_news_pic {
+            display: inline-block;
+            width: 300px;
+            float: left;
+            position: relative;
+
+            .news_tag {
+              display: inline-block;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+
+              color: white;
+              background-color: rgba(138, 156, 29, 1.00);
+              font-size: 15px;
+              padding: 3px 15px;
+            }
+
+            img {
+              display: inline-block;
+              max-width: 100%;
+              width: 300px;
+            }
+          }
+
+          .m_news_type {
+            display: inline-block;
+            width: calc(100% - 300px);
+            float: left;
+            padding: 30px;
+            text-align: left;
+
+            a {
+              display: inline-block;
+              width: 100%;
+              cursor: pointer;
+              font-size: 20px;
+              color: black;
+              font-weight: 600;
+              text-decoration: none;
+              padding-bottom: 20px;
+              @include transition(all .3s);
+
+              &.news_d {
+                font-size: 18px;
+                font-weight: 400;
+                padding-bottom: 0;
+                height: 70px;
+                overflow: hidden;
+              }
+
+              &:hover, &:active {
+                color: rgba(6, 35, 91, 1.00);
+              }
+            }
+
+            p {
+              display: inline-block;
+              width: 100%;
+              color: black;
+              font-size: 18px;
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+
+        .m_study_boxs {
+          background-color: white;
+          height: 450px;
+          @include clearfix();
+          
+          .m_study_pic {
+            display: inline-block;
+            width: 450px;
+            float: left;
+
+            img {
+              display: inline-block;
+              max-width: 100%;
+              width: 450px;
+            }
+          }
+
+          .m_study_type {
+            display: inline-block;
+            width: calc(100% - 450px);
+
+            > div {
+              display: inline-block;
+              width: 100%;
+              height: calc(450px / 3);
+              padding: 10px 20px;
+              text-align: left;
+              position: relative;
+
+              &.s_ac {
+                background-color: rgba(201, 201, 201, 1.00);
+              }
+
+              a {
+                display: inline-block;
+                cursor: pointer;
+                color: black;
+                font-size: 17px;
+                text-decoration: none;
+                @include transition(all .3s);
+                padding-bottom: 20px;
+                
+                &:hover, &:active {
+                  color: rgba(7, 35, 92, 1.00);
+                }
+              }
+
+              p {
+                display: inline-block;
+                color: black;
+                font-size: 17px;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+
+.title_boxs {
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+  text-align: left;
+  margin-bottom: 25px;
+
+  &.top_s {
+    padding-top: 55px;
+  }
+
+  .ml_title {
+    display: inline-block;
+    float: left;
+    color: black;
+    font-size: 30px;
+    line-height: 25px;
+  }
+
+  .ml_more {
+    cursor: pointer;
+    text-decoration: none;
+    float: right;
+    color: white;
+    font-size: 15px;
+    @include transition(all .3s);
+    padding: 3px 5px;
+
+    &.deep_green {
+      background-color: rgba(25, 169, 132, 1.00);
+
+      &:hover, &:active {
+        background-color: rgba(25, 169, 132, .8);
+      }
+    }
+    &.light_green {
+      background-color: rgba(29, 151, 25, 1.00);
+      &:hover, &:active {
+        background-color: rgba(29, 151, 25, .8);  
+      }
+    }
+    &.deep_blue {
+      background-color: rgba(6, 35, 91, 1.00);
+      &:hover, &:active {
+        background-color: rgba(6, 35, 91, .8);  
+      }
+    }
+  }
+}
+
+
+footer {
+  display: inline-block;
+  width: 100%;
+
+  .ft_boxs, .fd_boxs {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .ft_boxs {
+    background-color: rgba(8, 30, 82, 1.00);
+
+    .ft_box {
+      padding: 35px 30px;
+      display: inline-block;
+      max-width: $allwidth;
+      width: 100%;
+      @include clearfix();
+
+      @include range-width(420px, 1240px) {
+        padding: 35px 10px;
+      }
+
+      @include range-width(0,420px) {
+        padding: 20px;
+      }
+
+      .map_boxs {
+        display: inline-block;
+        width: 690px;
+        margin-left: 40px;
+        float: right;
+        @include clearfix();
+        
+        @include range-width(0,420px) {
+          width: 100%;
+          margin-left: 0;
+          float: none;
+        }
+
+        .map_box {
+          display: inline-block;
+          width: 400px;
+          height: 320px;
+          margin-left: 20px;
+          border: 10px solid white;
+          float: right;
+
+          .gm {
+            width: 380px;
+            height: 300px;
+
+            @include range-width(0,420px) {
+              width: 100%;
+              height: 280px;
+            }
+          }
+
+          @include range-width(0,420px) {
+            width: 100%;
+            height: 300px;
+            margin-left: 0;
+          }
+        }
+
+        .map_type {
+          display: inline-block;
+          width: calc(100% - 400px - 20px);
+          height: 320px;
+          border-top: 1px solid white; 
+          border-bottom: 1px solid white; 
+          float: left;
+          padding: 20px 0;
+          text-align: left;
+
+          @include range-width(0,420px) {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+          }
+
+          span {
+            display: inline-block;
+            width: 100%;
+            color: rgba(201, 201, 201, 1.00);
+            font-size: 20px;
+            padding-bottom: 10px;
+
+            @include range-width(0,420px) {
+              font-weight: bolder;
+            }
+          }
+
+          .mt_boxs {
+            display: inline-block;
+            width: 100%;
+            color: rgba(201, 201, 201, 1.00);
+            padding-bottom: 15px;
+
+            &:nth-child(4) {
+              padding-bottom: 6px;
+            }
+
+            p {
+              display: inline-block;
+              padding: 3px 0;
+              margin: 0;
+              font-size: 15px;
+
+              a {
+                display: inline-block;
+                cursor: pointer;
+                color: rgba(201, 201, 201, 1.00);
+                text-decoration: none;
+                @include transition(all .3s);
+
+                &:hover, &:active {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+
+        .link_boxs {
+          display: inline-block;
+          width: 100%;
+
+          .abox {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            @include border-radius(20px);
+            background-color: rgba(39, 65, 114, 1.00);
+            color: rgba(150, 162, 185, 1.00);
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: none;
+            @include transition(all .3s);
+            margin-right: 10px;
+
+            &:hover, &:active {
+              background-color: rgba(150, 162, 185, 1.00);
+              color: rgba(39, 65, 114, 1.00);
+            }
+
+            @include range-width(0,420px) {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      .imge_boxs {
+        display: inline-block;
+        width: calc(100% - 690px - 40px);
+        float: left;
+
+        @include range-width(0,420px) {
+          display: none;
+        }
+
+        .f_logo {
+          display: inline-block;
+          width: 100%;
+          
+          img {
+            display: inline-block;
+            max-width:100%;
+            width: 408px;
+          }
+
+          &:nth-child(1) {
+            padding-bottom: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .fd_boxs {
+    height: 60px;
+    background-color: rgba(0, 0, 0, 1.00); 
+
+    @include range-width(0,420px) {
+      height: 30px;
+    }
+
+    .fd_box {
+      display: inline-block;
+      max-width: $allwidth;
+      width: 100%;
+      color: white;
+      font-size: 15px;
+      text-align: left;
+      line-height: 60px;
+      padding: 0 30px;
+
+      @include range-width(420px, 1240px) {
+        padding: 0 10px;
+      }
+
+      @include range-width(0,420px) {
+        text-align: center;
+        font-size: 12px;
+        line-height: 30px;
+      }
+    }  
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
