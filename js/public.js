@@ -4,5 +4,5 @@
  */
 
 $(function () {
-
+  $(".m_news_pic, .m_study_pic").imgLiquid ();
 });
